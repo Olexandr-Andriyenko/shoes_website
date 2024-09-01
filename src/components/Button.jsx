@@ -6,6 +6,7 @@ function Button({
   backgroundColor,
   textColor,
   borderColor,
+  fullWidth,
 }) {
   return (
     <button
@@ -14,7 +15,7 @@ function Button({
         backgroundColor
           ? `${backgroundColor} ${textColor} ${borderColor}`
           : 'bg-coral-red text-white border-coral-red'
-      } rounded-full`}
+      } rounded-full ${fullWidth && 'w-full'}`}
     >
       {label}{' '}
       {iconURL && (
@@ -35,6 +36,7 @@ Button.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
   textColor: PropTypes.string.isRequired,
   borderColor: PropTypes.string.isRequired,
+  fullWidth: PropTypes.object.isRequired,
 };
 
 export default Button;
